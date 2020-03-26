@@ -25,6 +25,7 @@ int main()
 {
 int choice, account;
 string pin = "";
+char ast;
 
 	cout << fixed << showpoint << setprecision(2);
 
@@ -35,8 +36,16 @@ string pin = "";
 	cout << "\n\n\t\t\t  Please type your Bank Account Number : ";
 	cin >> account;
 	cout << "\n\t\t\t  Please type Personal Identification Number(PIN) : ";
-	cin >> pin;
+	ast = _getch();
+	//cin >> pin;
 
+	while(ast!=13)
+	{
+      pin.push_back(ast);
+      cout << '*';
+      ast = _getch();
+
+	}
  if (account!="221215" && pin!="221215")
  {
  	cout << "\n\t\t\tInvalid Bank Account and PIN. Please try again!"<<endl;
